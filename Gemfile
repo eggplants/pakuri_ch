@@ -62,6 +62,9 @@ gem 'turbo-rails'
 # Hotwire's modest JavaScript framework
 gem 'stimulus-rails'
 
+# Provide healthcheck
+gem 'rails-healthcheck'
+
 #########
 # Other #
 #########
