@@ -195,6 +195,10 @@ GEM
       rails (>= 5.2)
     rainbow (3.1.1)
     rake (13.0.6)
+    redis (5.0.6)
+      redis-client (>= 0.9.0)
+    redis-client (0.15.0)
+      connection_pool
     regexp_parser (2.8.1)
     reline (0.3.7)
       io-console (~> 0.5)
@@ -290,6 +294,7 @@ DEPENDENCIES
   rack-attack
   rails!
   rails-mermaid_erd
+  redis
   rubocop
   rubocop-capybara
   rubocop-erb

@@ -13,7 +13,10 @@ module PakuriCh
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.action_controller.include_all_helpers = false
-    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
+    config.cache_store = :redis_cache_store, {
+      url: ENV['REDIS_URL'] || 'redis://localhost:6379/0/cache',
+      expires_in: 90.minutes
+    }
     config.i18n.raise_on_missing_translations = true
 
     # Configuration for the application, engines, and railties goes here.

@@ -27,6 +27,9 @@ gem 'sqlite3', '~> 1.4'
 # Generate mermaid
 gem 'rails-mermaid_erd'
 
+# Caching
+gem 'redis'
+
 ###############
 # Controllers #
 ###############
