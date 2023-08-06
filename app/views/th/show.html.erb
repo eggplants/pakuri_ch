@@ -8,7 +8,7 @@
   <span>
     <%= idx.succ %>
     :
-    <%= (from_name = comment.from_name).blank? ? @board.default_from_name : form_name %>
+    <%= (from_name = comment.from_name).blank? ? @board.default_from_name : from_name %>
     :
     <%= comment.created_at.strftime(t('thread.date')) %>
     :
