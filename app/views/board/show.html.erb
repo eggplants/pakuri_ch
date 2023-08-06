@@ -1,0 +1,37 @@
+<b><%= t "board.#{@board.name}" %></b>
+<ul>
+  <% @board.ths.each do |th| %>
+  <li><%= link_to th.name, "/#{@board.name}/#{th.id}" %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<hr>
+
+<%= form_with url: '/test/bbs.cgi' do |form| %>
+  <p>
+    <%= form.submit t('board.submit') %>
+    <%= form.label :subject, t('board.title') %>
+    <%= form.text_field :subject, placeholder: 'hogehoge...', required: true %>
+  </p>
+
+  <p>
+    <%= form.label :FROM, t('thread.name') %>
+    <%= form.text_field :FROM, placeholder: @board.default_from_name %>
+    <%= form.label :mail, t('thread.mail') %>
+    <%= form.email_field :mail, placeholder: '774@example.com' %>
+  </p>
+
+  <p>
+    <%= form.label :MESSAGE, t('board.content') %>
+  </p>
+
+  <p>
+    <%= form.text_area :MESSAGE, size: '60x10', placeholder: 'fugafuga', required: true %>
+  </p>
+
+  <%= form.hidden_field :submit, value: t('board.submit') %>
+  <%= form.hidden_field :bbs, value: @board.name %>
+  <%= form.hidden_field :time, value: Time.now.to_i %>
+<% end %>

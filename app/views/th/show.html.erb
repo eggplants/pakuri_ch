@@ -1,0 +1,46 @@
+<h1><b><%= link_to t("board.#{@board.name}"), "/#{@board.name}" %></b> >> <%= @thread.name %></h1>
+
+<span style="color: red"><%= flash[:notice] %></span>
+
+<ol>
+  <% @thread.comments.each_with_index do |comment, idx| %>
+  <br>
+  <span>
+    <%= idx.succ %>
+    :
+    <%= (from_name = comment.from_name).blank? ? @board.default_from_name : form_name %>
+    :
+    <%= comment.created_at.strftime(t('thread.date')) %>
+    :
+    <%= "ID:#{comment.hashed_id}" %>
+  </span>
+  <li><%= comment.body %></li>
+  <% end %>
+</ol>
+
+<br>
+
+<hr>
+
+<%= form_with url: '/test/bbs.cgi' do |form| %>
+  <p>
+    <%= form.submit t('thread.submit') %>
+    <%= form.label :FROM, t('thread.name') %>
+    <%= form.text_field :FROM, placeholder: @board.default_from_name %>
+    <%= form.label :mail, t('thread.mail') %>
+    <%= form.email_field :mail, placeholder: '774@example.com' %>
+  </p>
+
+  <p>
+    <%= form.label :MESSAGE, t('thread.message') %>
+  </p>
+
+  <p>
+    <%= form.text_area :MESSAGE, size: '60x10', placeholder: 'hogehoge', required: true %>
+  </p>
+
+  <%= form.hidden_field :submit, value: t('thread.submit') %>
+  <%= form.hidden_field :bbs, value: @board.name %>
+  <%= form.hidden_field :key, value: format('%10d', @thread.id) %>
+  <%= form.hidden_field :time, value: Time.now.to_i %>
+<% end %>

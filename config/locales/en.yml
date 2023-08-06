@@ -1,0 +1,27 @@
+# https://guides.rubyonrails.org/i18n.html.
+
+en:
+  greeting: 'Welcome to Pakuri channel!'
+  board:
+    test: Test
+    whatever: Whatever
+    ruby: Ruby
+    python: Python
+    lisp: Lisp
+    category:
+      general: General
+      programming: Programming
+    submit: Create new thread
+    title: Title
+    content: Content
+  locale:
+    en: English
+    ja: Japanese
+  thread:
+    date: '%Y/%m/%d(%a) %H:%M:%S'
+    submit: Submit
+    name: Name
+    mail: E-mail
+    message: Body
+    error:
+      create: 'Failed to post. Please try again.'

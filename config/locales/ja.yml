@@ -1,0 +1,25 @@
+ja:
+  greeting: 'ぱくりチャンネルへようこそ！'
+  board:
+    test: テスト
+    whatever: なんでも
+    ruby: Ruby
+    python: Python
+    lisp: Lisp
+    category:
+      general: 全般
+      programming: プログラミング
+    submit: 新規スレッド書込
+    title: タイトル
+    content: 内容
+  locale:
+    en: 英語
+    ja: 日本語
+  thread:
+    date: '%Y/%m/%d(%a) %H:%M:%S'
+    submit: 書き込む
+    name: 名前
+    mail: E-mail
+    message: 本文
+    error:
+      create: 投稿に失敗しました。再度試してください。

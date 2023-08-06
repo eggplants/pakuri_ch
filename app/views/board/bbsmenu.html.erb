@@ -1,0 +1,8 @@
+<% @categories.each do |category| %>
+  <br>
+  <b><%= t "board.category.#{category.name}" %></b>
+  <% category.boards.each do |board| %>
+    <br>
+    <%= link_to t("board.#{board.name}"), board.name %>
+  <% end %>
+<% end %>

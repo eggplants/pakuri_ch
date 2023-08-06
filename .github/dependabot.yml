@@ -1,0 +1,20 @@
+x-interval: &interval monthly
+
+version: 2
+updates:
+  - package-ecosystem: gem
+    directory: /
+    schedule:
+      interval: &interval
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: &interval
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: &interval
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: &interval

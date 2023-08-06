@@ -1,0 +1,12 @@
+<h1><%= t 'greeting' %></h1>
+
+
+<% @board_categories.each do |board_category| %>
+  <br>
+  <b><%= t "board.category.#{board_category.name}" %></b>
+  <ul>
+    <% board_category.boards.each do |board| %>
+    <l1><%= link_to t("board.#{board.name}"), board.name %></li>
+    <% end %>
+  </ul>
+<% end %>
