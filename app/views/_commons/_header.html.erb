@@ -3,7 +3,7 @@
 
   <% (locales = I18n.available_locales).each_with_index do |locale, idx| %>
     <%= form_with url: '/locale' do |form| %>
-      <%= form.submit t("locale.#{locale}") %>
+      <%= form.submit t("locale.#{locale}"), disabled: I18n.locale == locale.to_sym %>
       <%= form.hidden_field :locale, value: locale %>
       <%= '|' if locales.size != idx.succ %>
     <% end %>
